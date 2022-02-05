@@ -27,7 +27,7 @@ scriptVersion="rc.1.0"
 # Print tool disclaimer
 ######################
 
-fuckingWarning () {
+warning () {
     echo '##################################################################'
     echo '#      THIS PROGRAM WILL NOT BE USED FOR ILLEGAL PURPOSES.       #'
     echo '#  The user will assume FULL responsibility for this tools use,  #'
@@ -40,7 +40,7 @@ fuckingWarning () {
 
 
 ######################
-# URL Agents
+# User Agents
 ######################
 ## $1 iPhone
 ## $2 Android
@@ -111,7 +111,7 @@ esac
 
 ## General Interactive Menu
 interactiveMenu() {
-    fuckingWarning
+    warning
     printf "\n\n"
     while :; do
         printf "Welcome to the feroffuf tool. Select an option to start: \n"
@@ -136,7 +136,7 @@ interactiveMenu() {
         elif [ $menu -eq "4" ]; then
             printf "Program exiting\nARE YOU SURE?[Y|N] "
             read confirm 
-            if [ $confirm = "Y" ];then
+            if [ $confirm = "Y" ] || [ $confirm = "y" ];then
                 break
             else 
                 clear;continue
